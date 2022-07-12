@@ -7,6 +7,7 @@
   <input
     type="text"
     formControlName="username"
+    autocomplete="off"
     *handleError="$any(form).get('username')"
   />
   <h3>کلمه عبور:</h3>
@@ -14,6 +15,7 @@
   <input
     type="password"
     formControlName="password"
+    autocomplete="off"
     *handleError="
       $any(form).get('password');
       style: 'font-weight: bold; color: red; font-style: italic';
@@ -25,6 +27,7 @@
   <input
     type="password"
     formControlName="confirmPassword"
+    autocomplete="off"
     *handleError="
       $any(form).get('confirmPassword');
       message: 'عزیزم تکرارش با خودش یکی نیست 😂'
