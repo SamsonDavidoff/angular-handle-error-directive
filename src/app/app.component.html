@@ -1,0 +1,36 @@
+<app-header></app-header>
+<app-top-comments></app-top-comments>
+<!-- ------------------------------------------------------------ -->
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h3>نام کاربری:</h3>
+  <!-- ساده‌ترین حالت دایرکتیو 👇🏻 -->
+  <input
+    type="text"
+    formControlName="username"
+    *handleError="$any(form).get('username')"
+  />
+  <h3>کلمه عبور:</h3>
+  <!-- می‌تونید استایل و کلاس بدید 👇🏻 -->
+  <input
+    type="password"
+    formControlName="password"
+    *handleError="
+      $any(form).get('password');
+      style: 'font-weight: bold; color: red; font-style: italic';
+      class: 'alert alert-danger'
+    "
+  />
+  <h3>تکرار کلمه عبور:</h3>
+  <!-- اگه لازم شد می‌تونید پیغام اینلاین بدید 👇🏻 -->
+  <input
+    type="password"
+    formControlName="confirmPassword"
+    *handleError="
+      $any(form).get('confirmPassword');
+      message: 'عزیزم تکرارش با خودش یکی نیست 😂'
+    "
+  />
+  <button [disabled]="form.invalid">ورود</button>
+</form>
+<!-- ------------------------------------------------------------ -->
+<app-bottom-comments></app-bottom-comments>

@@ -1,0 +1,15 @@
+button {
+  display: block;
+  margin-top: 20px;
+}
+
+.alert {
+  border: 3px solid blue;
+  border-radius: 7px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.alert-danger {
+  background-color: yellow;
+}
